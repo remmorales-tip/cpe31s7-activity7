@@ -1,0 +1,18 @@
+---
+- name: Install Python
+  hosts: python
+
+  tasks:
+  - name: Include variable from config.yaml
+    include_vars:
+      config.yaml
+
+  - name: install python using python role
+    include_role:
+       name: python
+
+  - name: Use copyname role
+    include_role:
+      name: copyname
+
+
